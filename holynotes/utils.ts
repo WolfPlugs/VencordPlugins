@@ -6,10 +6,10 @@
 
 import { createStore } from "@api/DataStore";
 import { DataStore } from "@api/index";
-
-import noteHandler, { noteHandlerCache } from "./noteHandler";
-import { HolyNotes } from "./types";
 import { Toasts } from "@webpack/common";
+
+import noteHandler, { noteHandlerCache } from "./NoteHandler";
+import { HolyNotes } from "./types";
 
 export const HolyNoteStore = createStore("HolyNoteData", "HolyNoteStore");
 
@@ -28,6 +28,7 @@ export async function getFormatedEntries() {
     data.forEach(function (note) {
         notebooks[note[0].toString()] = note[1];
     });
+
     return notebooks;
 }
 

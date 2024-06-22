@@ -7,7 +7,8 @@
 import { ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalProps, ModalRoot, ModalSize } from "@utils/modal";
 import { findByProps } from "@webpack";
 import { Button, Forms, Text } from "@webpack/common";
-import noteHandler from "../../noteHandler";
+
+import noteHandler from "../../NoteHandler";
 import { downloadNotes, uploadNotes } from "../../utils";
 
 export default ({ onClose, ...modalProps }: ModalProps & { onClose: () => void; }) => {
@@ -61,7 +62,6 @@ export default ({ onClose, ...modalProps }: ModalProps & { onClose: () => void; 
                         onClick={() => {
                             noteHandler.refreshAvatars();
                         }}>Refresh Avatars</Button>
-
                     <Button
                         look={Button.Looks.FILLED}
                         color={Button.Colors.GREEN}
